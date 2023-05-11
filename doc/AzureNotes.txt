@@ -5,3 +5,16 @@ Registered app in Azure AD: NuDecisionSWA
   Object ID: 8ec30dfc-a87b-4553-89ce-d41b23ee99e0
   Directory (tenant) ID: 1c48c56d-7117-47c6-b1eb-457763896205
   Supported account types: All Microsoft account users
+
+
+
+Issues:
+
+  Reply address(es) configured: https://localhost:44316/
+  Requested reply URL: https://localhost:44316/signin-oidc
+
+
+SWA Resource: azure-static-web-apps-orange-water-0d260d810
+
+Site URL: https://orange-water-0d260d810.3.azurestaticapps.net/
+

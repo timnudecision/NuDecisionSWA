@@ -91,7 +91,11 @@
     </WebApplicationInfo> -->
     <WebApplicationInfo>
       <Id>7cb79981-e426-47cc-ac27-47b6eac10001</Id>
+<<<<<<< HEAD
       <Resource>api://orange-water-0d260d810.3.azurestaticapps.net/7cb79981-e426-47cc-ac27-47b6eac10001</Resource>
+=======
+      <Resource>api://localhost:44316/7cb79981-e426-47cc-ac27-47b6eac10001</Resource>
+>>>>>>> main
       <Scopes>
         <Scope>User.Read</Scope>
         <Scope>profile</Scope>

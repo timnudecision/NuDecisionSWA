@@ -1,0 +1,2 @@
+!function(){"use strict";var e={d:function(n,t){for(var o in t)e.o(t,o)&&!e.o(n,o)&&Object.defineProperty(n,o,{enumerable:!0,get:t[o]})}};e.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),e.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},Office.onReady((function(){})),("undefined"!=typeof self?self:"undefined"!=typeof window?window:void 0!==e.g?e.g:void 0).action}();
+//# sourceMappingURL=commands.js.map

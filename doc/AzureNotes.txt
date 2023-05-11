@@ -1,0 +1,7 @@
+
+Registered app in Azure AD: NuDecisionSWA
+  Display name: NuDecisionSWA
+  Application (client) ID: 121964d0-6350-438e-b38a-54bfedab82bf
+  Object ID: 8ec30dfc-a87b-4553-89ce-d41b23ee99e0
+  Directory (tenant) ID: 1c48c56d-7117-47c6-b1eb-457763896205
+  Supported account types: All Microsoft account users

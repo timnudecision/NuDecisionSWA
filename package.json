@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "postbuild": "cp src/taskpane/taskpane.html dist/index.html",
     "build:dev": "webpack --mode development",
     "configure-sso": "office-addin-sso configure manifest.xml",
     "dev-server": "node --inspect=localhost:8080 dist/middletier.js",

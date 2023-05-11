@@ -90,8 +90,8 @@
       </Scopes>
     </WebApplicationInfo> -->
     <WebApplicationInfo>
-      <Id>7cb79981-e426-47cc-ac27-47b6eac10001</Id>
-      <Resource>api://orange-water-0d260d810.3.azurestaticapps.net/7cb79981-e426-47cc-ac27-47b6eac10001</Resource>
+      <Id>121964d0-6350-438e-b38a-54bfedab82bf</Id>
+      <Resource>api://orange-water-0d260d810.3.azurestaticapps.net/121964d0-6350-438e-b38a-54bfedab82bf</Resource>
       <Scopes>
         <Scope>User.Read</Scope>
         <Scope>profile</Scope>

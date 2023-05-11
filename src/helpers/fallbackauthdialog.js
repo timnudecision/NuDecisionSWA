@@ -10,7 +10,7 @@ import { LogLevel, PublicClientApplication } from "@azure/msal-browser";
 //import { getUserData } from "./middle-tier-calls";
 import { showMessage } from "./message-helper";
 
-const clientId = "7cb79981-e426-47cc-ac27-47b6eac10001"; //This is your client ID
+const clientId = "121964d0-6350-438e-b38a-54bfedab82bf"; //This is your client ID
 const accessScope = `api://${window.location.host}/${clientId}/access_as_user`;
 const loginRequest = {
   scopes: ["user.read"],

@@ -43,7 +43,7 @@ var logincommon=
      
     msalConfig:{
         auth: {           
-            clientId: '7cb79981-e426-47cc-ac27-47b6eac10001',           
+            clientId: '121964d0-6350-438e-b38a-54bfedab82bf',           
             authority: 'https://login.microsoftonline.com/common',
           },
           cache: {

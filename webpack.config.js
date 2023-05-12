@@ -16,7 +16,7 @@ module.exports = async (env, options) => {
         polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
         taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
         commands: "./src/commands/commands.js",
-        login:"./src/authentication/login.js",
+        login: "./src/authentication/login.js",
         fallbackauthdialog: "./src/helpers/fallbackauthdialog.js",
       },
       resolve: {

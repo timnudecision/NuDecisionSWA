@@ -11,7 +11,7 @@ import { LogLevel, PublicClientApplication } from "@azure/msal-browser";
 import { showMessage } from "./message-helper";
 
 const clientId = "121964d0-6350-438e-b38a-54bfedab82bf"; //This is your client ID
-const accessScope = `api://${window.location.host}/${clientId}/access_as_user`;
+//const accessScope = `api://${window.location.host}/${clientId}/access_as_user`;
 const loginRequest = {
   scopes: ["user.read"],
   //extraScopesToConsent: ["user.read"],
@@ -105,10 +105,10 @@ export async function dialogFallback(callback) {
   if (homeAccountId !== null) {
     const result = await publicClientApp.acquireTokenSilent(loginRequest);
     if (result !== null && result.accessToken !== null) {
-      console.log('getting userdata2');
+      console.log("getting userdata2");
 
       // const response = await getUserData(result.accessToken);
-      console.log("getting sso token:",result);
+      console.log("getting sso token:", result);
       callbackFunction(result);
     }
   } else {
@@ -129,14 +129,13 @@ export async function dialogFallback2(callback) {
   //     callbackFunction(response);
   //   }
   // } else {
-    callbackFunction = callback;
+  callbackFunction = callback;
 
-    // We fall back to Dialog API for any error.
-    const url = "/fallbackauthdialog.html";
-    showLoginPopup(url);
+  // We fall back to Dialog API for any error.
+  const url = "/fallbackauthdialog.html";
+  showLoginPopup(url);
   // }
 }
-
 
 // This handler responds to the success or failure message that the pop-up dialog receives from the identity provider
 // and access token provider.
@@ -145,7 +144,7 @@ async function processMessage(arg) {
   //console.log("Message received in processMessage: " + JSON.stringify(arg));
 
   let messageFromDialog = JSON.parse(arg.message);
-  console.log('procmessage',arg);
+  console.log("procmessage", arg);
 
   if (messageFromDialog.status === "success") {
     // We now have a valid access token.
@@ -165,7 +164,7 @@ async function processMessage(arg) {
   } else {
     // Something went wrong with authentication or the authorization of the web application.
     loginDialog.close();
-    console.log('proc err',messageFromDialog);
+    console.log("proc err", messageFromDialog);
     if (messageFromDialog.error) {
       showMessage(JSON.stringify(messageFromDialog.error.toString()));
     } else if (messageFromDialog.result) {
@@ -185,4 +184,3 @@ function showLoginPopup(url) {
     loginDialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
   });
 }
-

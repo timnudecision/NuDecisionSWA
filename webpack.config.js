@@ -15,6 +15,7 @@ module.exports = async (env, options) => {
       entry: {
         polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
         taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
+        tabpane: "./src/taskpane/tabpane.ts",
         commands: "./src/commands/commands.js",
         login: "./src/authentication/login.js",
         fallbackauthdialog: "./src/helpers/fallbackauthdialog.js",
@@ -59,6 +60,11 @@ module.exports = async (env, options) => {
           filename: "taskpane.html",
           template: "./src/taskpane/taskpane.html",
           chunks: ["polyfill", "taskpane"],
+        }),
+        new HtmlWebpackPlugin({
+          filename: "tabpane.html",
+          template: "./src/taskpane/tabpane.html",
+          chunks: ["polyfill", "tabpane"],
         }),
         new HtmlWebpackPlugin({
           filename: "commands.html",

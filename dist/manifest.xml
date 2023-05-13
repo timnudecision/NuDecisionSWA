@@ -6,8 +6,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="NuDecision Add-in"/>
   <Description DefaultValue="Your rules, your way."/>
-  <IconUrl DefaultValue="https://localhost:44316/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:44316/assets/icon-64.png"/>
+  <IconUrl DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://www.nudecision.com/help"/>
   <AppDomains>
     <AppDomain>https://www.nudecision.com</AppDomain>
@@ -17,7 +17,7 @@
     <Host Name="Workbook"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:44316/taskpane.html"/>
+    <SourceLocation DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -62,14 +62,14 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:44316/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:44316/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:44316/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:44316/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:44316/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://orange-water-0d260d810.3.azurestaticapps.net/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>

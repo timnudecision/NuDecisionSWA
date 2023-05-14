@@ -10,8 +10,10 @@
     "sourceMap": true,
     "inlineSources": true,
     "target": "es2022",
+    "module":"AMD",
+    "moduleResolution": "node",
     "lib": [
-      "es2015",
+      "es2022",
       "dom"
     ]
   },

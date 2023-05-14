@@ -20,6 +20,7 @@
     "start": "office-addin-debugging start manifest.xml",
     "start:desktop": "office-addin-debugging start manifest.xml desktop",
     "start:web": "office-addin-debugging start manifest.xml web",
+    "start:debug": "tsc && office-addin-debugging start manifest.xml desktop",
     "stop": "office-addin-debugging stop manifest.xml",
     "validate": "office-addin-manifest validate manifest.xml"
   },
@@ -46,7 +47,6 @@
     "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.20.2",
     "@types/jquery": "^3.3.31",
-    "@types/office-js": "^1.0.256",
     "@types/office-js-preview": "^1.0.385",
     "@types/office-runtime": "^1.0.23",
     "acorn": "^8.5.0",
@@ -59,6 +59,7 @@
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "https-browserify": "^1.0.0",
+    "nodemon": "^2.0.22",
     "office-addin-debugging": "^5.0.5",
     "office-addin-dev-certs": "^1.11.3",
     "office-addin-lint": "^2.2.5",
@@ -76,5 +77,6 @@
   "prettier": "office-addin-prettier-config",
   "browserslist": [
     "ie 11"
-  ]
+  ],
+  "manifest": "manifest.xml"
 }

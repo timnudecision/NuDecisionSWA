@@ -28,7 +28,8 @@ async function setauthcookie(res, err) {
   const usrprofile = await getGraphdata(res);
   //console.log(usrprofile);
   var roles = ["Admin", "User"]; // for local testing ONLY
-  if (process.env.NODE_ENV === "production") roles = await GetRoles(usrprofile.mail);
+  if (process.env.NODE_ENV !== "development") roles = await GetRoles(usrprofile.mail);
+  roles = roles.concat(process.env.NODE_ENV);
   console.log(roles);
   document.getElementById("login-area").style.display = "none";
   document.getElementById("role-area").style.display = "block";

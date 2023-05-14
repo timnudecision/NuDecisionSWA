@@ -10,8 +10,8 @@ Registered app in Azure AD: NuDecisionSWA
 
 Issues:
 
-  Reply address(es) configured: https://localhost:44316/
-  Requested reply URL: https://localhost:44316/signin-oidc
+  Reply address(es) configured: https://localhost:3000/
+  Requested reply URL: https://localhost:3000/signin-oidc
 
 
 SWA Resource: azure-static-web-apps-orange-water-0d260d810

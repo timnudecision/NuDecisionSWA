@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "noEmitOnError": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "sourceMap": true,
     "inlineSources": true,
     "target": "es2022",

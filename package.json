@@ -20,7 +20,7 @@
     "start": "office-addin-debugging start manifest.xml",
     "start:desktop": "office-addin-debugging start manifest.xml desktop",
     "start:web": "office-addin-debugging start manifest.xml web",
-    "start:debug": "tsc && office-addin-debugging start manifest.xml desktop",
+    "start:debug": "tsc && cp src/taskpane/taskpane.html dist/index.html && office-addin-debugging start manifest.xml desktop",
     "stop": "office-addin-debugging stop manifest.xml",
     "validate": "office-addin-manifest validate manifest.xml"
   },

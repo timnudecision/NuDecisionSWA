@@ -26,7 +26,7 @@ async function setauthcookie(res, err) {
   localStorage.setItem("docregisterauth", res);
   console.log(res);
   const usrprofile = await getGraphdata(res);
-  //console.log(usrprofile);
+  console.log(usrprofile);
   var roles = ["Admin", "User"]; // for local testing ONLY
   if (process.env.NODE_ENV !== "development") roles = await GetRoles(usrprofile.mail);
   roles = roles.concat(process.env.NODE_ENV);

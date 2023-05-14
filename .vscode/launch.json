@@ -12,7 +12,11 @@
       "timeout": 600000,
       "webRoot": "${workspaceRoot}",
       "preLaunchTask": "Debug: Excel Desktop",
-      "postDebugTask": "Stop Debug"
+      "postDebugTask": "Stop Debug",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+          "webpack:///./src/*": "${webRoot}/src/*"
+      }
     },
     {
       "name": "Excel Desktop (Edge Legacy)",

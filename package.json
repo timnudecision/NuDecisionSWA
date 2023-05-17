@@ -17,7 +17,7 @@
     "lint:fix": "office-addin-lint fix",
     "prestart": "npm run build:dev",
     "prettier": "office-addin-lint prettier",
-    "start": "office-addin-debugging start manifest.xml",
+    "start": "cp src/taskpane/taskpane.html dist/index.html && office-addin-debugging start manifest.xml",
     "start:desktop": "office-addin-debugging start manifest.xml desktop",
     "start:web": "office-addin-debugging start manifest.xml web",
     "start:debug": "tsc && cp src/taskpane/taskpane.html dist/index.html && office-addin-debugging start manifest.xml desktop",

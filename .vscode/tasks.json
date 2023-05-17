@@ -45,7 +45,8 @@
     {
       "label": "Debug: Excel Desktop",
       "type": "npm",
-      "script": "start:desktop -- --app excel",
+      "script": "start:desktop",
+      "wrongscript": "start:desktop -- --app excel << this originally installed does not work",
       "dependsOn": [
         "Build (Development)"
       ],

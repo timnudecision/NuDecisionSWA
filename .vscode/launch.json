@@ -9,14 +9,12 @@
       "name": "Excel Desktop (Edge Chromium)",
       "type": "msedge",
       "request": "attach",
+      "useWebView": true,
       "port": 9229,
       "timeout": 600000,
       "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ],
-      "trace": "verbose"
+      "preLaunchTask": "Debug: Excel Desktop",
+      "postDebugTask": "Stop Debug"
     },
     {
       "name": "Excel Desktop (Edge Legacy)",

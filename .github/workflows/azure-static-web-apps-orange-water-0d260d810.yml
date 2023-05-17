@@ -3,7 +3,8 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - main
+# don't merge to main branch
+      - merge-existing-taskpane
 # thus comment block specified by Ankur
 #  pull_request:
 #    types: [opened, synchronize, reopened, closed]

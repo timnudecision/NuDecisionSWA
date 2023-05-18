@@ -27,13 +27,10 @@ function AuthHelper() {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             parentcallback = _pcallback;
-            // We fall back to Dialog API for any error.
-            url = "/login.html"; // Office.onReady().then(r=>{
-            ShowLoginPopup(url);
 
-            // })
-            //const tk=await OfficeRuntime.auth.getAccessToken();
-            //GetGraphData(tk);
+            // We fall back to Dialog API for any error.
+            url = "/login.html";
+            ShowLoginPopup(url);
           case 3:
           case "end":
             return _context.stop();
@@ -61,28 +58,21 @@ function AuthHelper() {
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            console.log("proc message");
-            logger.log("Message received in processMessage: " + JSON.stringify(arg));
             messageFromDialog = JSON.parse(arg.message);
             loginDialog.close();
             if (messageFromDialog.status === "success") {
               // We now have a valid access token.
               try {
-                logger.log("final call back: " + messageFromDialog.result);
                 //GetGraphData(messageFromDialog.result);
-                if (parentcallback) {
-                  logger.log("got parent call back");
-                  parentcallback(messageFromDialog.result, null);
-                } else logger.log("parent call back null");
+                if (parentcallback) parentcallback(messageFromDialog.result, null);
               } catch (ex1) {
-                logger.log(ex1);
-                if (parentcallback) parentcallback(null, ex1);else logger.log("parent call back null ex1");
+                if (parentcallback) parentcallback(null, ex1);
               }
             } else {
               //this.loginDialog.close();
-              if (parentcallback) parentcallback(null, messageFromDialog);else logger.log("parent call back failure");
+              if (parentcallback) parentcallback(null, messageFromDialog);
             }
-          case 5:
+          case 3:
           case "end":
             return _context2.stop();
         }
@@ -93,30 +83,6 @@ function AuthHelper() {
     };
   }();
 }
-var logger = {};
-logger.log = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(logmsg, logobj) {
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          try {
-            //console.log(logmsg,logobj);
-            if (logobj) logmsg = logmsg + ": " + JSON.stringify(logobj);
-            // if (Object.prototype.toString.call(logmsg) === '[object Object]')
-            // logmsg=JSON.stringify(logmsg);
-          } catch (err) {
-            console.log("eeror in logger", err);
-          }
-        case 1:
-        case "end":
-          return _context3.stop();
-      }
-    }, _callee3);
-  }));
-  return function (_x3, _x4) {
-    return _ref3.apply(this, arguments);
-  };
-}();
 
 /***/ }),
 
@@ -322,7 +288,6 @@ __webpack_require__.r(__webpack_exports__);
  * See LICENSE in the project root for license information.
  */
 
-//const fallbackAuthHelper = require("./../authentication/authhelper");
 
 
 Office.onReady((info) => {
@@ -342,27 +307,24 @@ function InitAuth() {
 
 async function setauthcookie(res, err) {
   localStorage.setItem("docregisterauth", res);
-  console.log(res);
+
+  console.log(JSON.stringify(res));
   const usrprofile = await getGraphdata(res);
-  console.log(usrprofile);
+  console.log(JSON.stringify(usrprofile));
+
   var roles = ["Admin", "User"]; // for local testing ONLY
   if (false) {}
   roles = roles.concat("development");
-  console.log(roles);
+  console.log(JSON.stringify(roles));
+
   document.getElementById("login-area").style.display = "none";
   document.getElementById("role-area").style.display = "block";
   document.getElementById("message-area").style.display = "block";
-  if (roles.length == 0) {
-    var li = document.createElement("li");
-    li.append("No Roles defined for this login");
-    document.getElementById("message-area").append(li);
-  } else {
-    for (var i = 0; i < roles.length; i++) {
-      var li = document.createElement("li");
-      li.append(roles[i]);
-      document.getElementById("message-area").append(li);
-    }
-  }
+
+  var li = document.createElement("li");
+  const txt = roles.length == 0 ? "No Roles defined for this login" : "Roles for this login are:" + roles.join(", ");
+  li.append(txt);
+  document.getElementById("message-area").append(li);
 }
 
 async function GetRoles(email) {
@@ -370,7 +332,6 @@ async function GetRoles(email) {
   let res = await fetch(url);
   let resbody = await res.json();
   return resbody;
-  //console.log(resbody);
 }
 
 async function getGraphdata(accesstoken) {

@@ -4,14 +4,10 @@ export function AuthHelper() {
 
   this.DialogFallback = async (_pcallback) => {
     parentcallback = _pcallback;
+
     // We fall back to Dialog API for any error.
     const url = "/login.html";
-    // Office.onReady().then(r=>{
     ShowLoginPopup(url);
-
-    // })
-    //const tk=await OfficeRuntime.auth.getAccessToken();
-    //GetGraphData(tk);
   };
 
   var ShowLoginPopup = (url) => {
@@ -30,43 +26,20 @@ export function AuthHelper() {
   };
 
   var ProcessMessage = async (arg) => {
-    console.log("proc message");
-    logger.log("Message received in processMessage: " + JSON.stringify(arg));
-
     let messageFromDialog = JSON.parse(arg.message);
     loginDialog.close();
 
     if (messageFromDialog.status === "success") {
       // We now have a valid access token.
       try {
-        logger.log("final call back: " + messageFromDialog.result);
         //GetGraphData(messageFromDialog.result);
-        if (parentcallback) {
-          logger.log("got parent call back");
-          parentcallback(messageFromDialog.result, null);
-        } else logger.log("parent call back null");
+        if (parentcallback) parentcallback(messageFromDialog.result, null);
       } catch (ex1) {
-        logger.log(ex1);
         if (parentcallback) parentcallback(null, ex1);
-        else logger.log("parent call back null ex1");
       }
     } else {
       //this.loginDialog.close();
       if (parentcallback) parentcallback(null, messageFromDialog);
-      else logger.log("parent call back failure");
     }
   };
 }
-
-var logger = {};
-
-logger.log = async (logmsg, logobj) => {
-  try {
-    //console.log(logmsg,logobj);
-    if (logobj) logmsg = logmsg + ": " + JSON.stringify(logobj);
-    // if (Object.prototype.toString.call(logmsg) === '[object Object]')
-    // logmsg=JSON.stringify(logmsg);
-  } catch (err) {
-    console.log("eeror in logger", err);
-  }
-};

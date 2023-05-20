@@ -2,16 +2,18 @@
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
+    "moduleResolution": "node",
+    "module":"es2022",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "react",
     "noEmitOnError": true,
     "outDir": "dist",
+    "rootDirs": ["src", "api"],
+    "declaration": true,
     "sourceMap": true,
     "inlineSources": true,
     "target": "es2022",
-    "module":"AMD",
-    "moduleResolution": "node",
     "lib": [
       "es2022",
       "dom"

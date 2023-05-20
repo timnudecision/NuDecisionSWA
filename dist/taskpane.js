@@ -63,13 +63,11 @@ function AuthHelper() {
             if (messageFromDialog.status === "success") {
               // We now have a valid access token.
               try {
-                //GetGraphData(messageFromDialog.result);
                 if (parentcallback) parentcallback(messageFromDialog.result, null);
               } catch (ex1) {
                 if (parentcallback) parentcallback(null, ex1);
               }
             } else {
-              //this.loginDialog.close();
               if (parentcallback) parentcallback(null, messageFromDialog);
             }
           case 3:
@@ -322,7 +320,10 @@ async function setauthcookie(res, err) {
   document.getElementById("message-area").style.display = "block";
 
   var li = document.createElement("li");
-  const txt = roles.length == 0 ? "No Roles defined for this login" : "Roles for this login are:" + roles.join(", ");
+  const txt =
+    roles.length == 0
+      ? "No Roles defined for this login"
+      : `Roles for ${usrprofile.displayName}, ${usrprofile.mail} are:\n` + roles.join(", ");
   li.append(txt);
   document.getElementById("message-area").append(li);
 }

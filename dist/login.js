@@ -38,6 +38,7 @@ var logincommon = {
   msalConfig: {
     auth: {
       clientId: '121964d0-6350-438e-b38a-54bfedab82bf',
+      // Azure application ID         
       authority: 'https://login.microsoftonline.com/common'
     },
     cache: {
